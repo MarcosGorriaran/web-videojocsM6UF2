@@ -19,13 +19,13 @@ export default {
     name: 'AddGame',
     data() {
         return {
-            nuevoVideojuego: { nombre: '', descripcion: '', imagenUrl: '' }
+            nuevoVideojuego: {nombre: '', descripcion: '', imagenUrl: '' }
         };
     },
     methods: {
         agregarVideojuego() {
             if (this.nuevoVideojuego.nombre && this.nuevoVideojuego.descripcion && this.nuevoVideojuego.imagenUrl) {
-                emit('addGame',this.nuevoVideojuego);
+                this.$emit('addGame',this.nuevoVideojuego);
             }
         }
 

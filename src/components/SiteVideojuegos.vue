@@ -11,7 +11,9 @@
                     <button @click="eliminarVideojuego(videojuego.id)">Eliminar</button>
                     <button @click="eliminarVideojuego(videojuego.id)">Modificar</button>
                 </div>
+                
             </article>
+            <AddGame @addGame="agregarVideojuego"></AddGame>
         </div>
         
     </section>
@@ -19,37 +21,32 @@
 
 
 <script>
-import AddGame from 'AddGame.vue'
+import AddGame from './AddGame.vue'
 export default {
     name: 'SiteVideojuegos',
     data() {
         return {
-            videojuegos: [
-                { id: 1, nombre: "Garry's Mod", descripcion: "Garry's Mod es un entorno que te permite jugar libremente con el motor físico...", imagenUrl: "@/assets/juego1.jpg" }
-                //   { id: 2, nombre: "The Binding Of Isaac", descripcion: "Cuando la madre de Isaac empieza a escuchar la voz de Dios exigiéndole un sacrificio...", imagen: "@/assets/juego2.jpg" },
-            ],
-            nuevoVideojuego: { nombre: '', descripcion: '', imagenUrl: '' }
+            videogameLocalID:'game',
+            videojuegos: this.LoadLocalStorage()
         };
+    },
+    
+    components: {
+        AddGame
     },
     methods: {
         eliminarVideojuego(id) {
             this.videojuegos = this.videojuegos.filter(videojuego => videojuego.id !== id);
         },
-        agregarVideojuego() {
-            if (this.nuevoVideojuego.nombre && this.nuevoVideojuego.descripcion && this.nuevoVideojuego.imagenUrl) {
-                const nuevoId = this.videojuegos.length + 1;
-                const nuevoVideojuego = {
-                    id: nuevoId,
-                    nombre: this.nuevoVideojuego.nombre,
-                    descripcion: this.nuevoVideojuego.descripcion,
-                    imagen: this.nuevoVideojuego.imagenUrl
-                };
-                this.videojuegos.push(nuevoVideojuego);
-                this.nuevoVideojuego = { nombre: '', descripcion: '', imagenUrl: '' };
-                
-            }
+        agregarVideojuego(videogame) {
+            const nuevoId = this.videojuegos.length + 1;
+            videogame.id = nuevoId;
+            this.videojuegos.push(videogame);
+            localStorage.setItem(this.videogameLocalID,JSON.stringify(videogame))
+        },
+        LoadLocalStorage(){
+            return JSON.parse(localStorage.getItem)
         }
-
         //Falta el metodo de modificar y llamar a la funcion en el boton modificar
     }
 };
