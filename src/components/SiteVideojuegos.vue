@@ -13,20 +13,13 @@
                 </div>
             </article>
         </div>
-        <form @submit.prevent="agregarVideojuego">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" v-model="nuevoVideojuego.nombre">
-            <label for="descripcion">Descripción:</label>
-            <input type="text" id="descripcion" v-model="nuevoVideojuego.descripcion">
-            <label for="imagenUrl">URL de la imagen:</label>
-            <input type="text" id="imagenUrl" v-model="nuevoVideojuego.imagenUrl">
-            <button type="submit">Agregar</button>
-        </form>
+        
     </section>
 </template>
 
 
 <script>
+import AddGame from 'AddGame.vue'
 export default {
     name: 'SiteVideojuegos',
     data() {
