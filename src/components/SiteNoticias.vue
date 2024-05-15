@@ -13,9 +13,11 @@
                     la única forma de adquirirlo es trabajando duro y aprendiendo
                     para posteriormente poder transmitirlo.</p>
                 <img src="@/assets/noticia1.jpg" alt="Noticia 1">
-                <div class="divnot">
-                    <a href="#">Seguir la noticia</a>
-                </div>
+                <a href="#" class="linkButton">
+                    <div class="divnot">
+                        <p>Seguir la noticia</p>
+                    </div>
+                </a>
             </article>
             <article class="notart">
                 <h3>Eventos y Pruebas de los Dioses en Assassin's Creed Origins</h3>
@@ -25,9 +27,11 @@
                     se ha aclarado si los enemigos que ya han aparecido volverán a estar disponibles más adelante.
                     Aclararemos esta información cuando Ubisoft se pronuncie al respecto.</p>
                 <img src="@/assets/noticia2.jpg" alt="Noticia 2">
-                <div class="divnot">
-                    <a href="noticia.html">Seguir la noticia</a>
-                </div>
+                <a href="#" class="linkButton">
+                    <div class="divnot">
+                        <p>Seguir la noticia</p>
+                    </div>
+                </a>
             </article>
             <article class="notart">
                 <h3>Nuevas pistas sugieren que el nuevo juego de HideoKojima esDeath Stranding 2</h3>
@@ -38,9 +42,11 @@
                     ha estado emocionando a los fans sobre una pronta revelación y
                     las sospechas sobre Death Stranding se hacen más grandes.</p>
                 <img src="@/assets/noticia3.jpeg" alt="Noticia 3" height="35%">
-                <div class="divnot">
-                    <a href="#">Seguir la noticia</a>
-                </div>
+                <a href="#" class="linkButton">
+                    <div class="divnot">
+                        <p>Seguir la noticia</p>
+                    </div>
+                </a>
             </article>
             <article class="notart">
                 <h3>4.000 dólares por doblar un juego millonario:'Bayonetta 3' es el último escándalo</h3>
@@ -52,9 +58,11 @@
                     miserables incluso en producciones que acaban generando millones
                     y millones de dólares.</p>
                 <img src="@/assets/noticia4.jpeg" alt="Noticia 4">
-                <div class="divnot">
-                    <a href="#">Seguir la noticia</a>
-                </div>
+                <a href="#" class="linkButton">
+                    <div class="divnot">
+                        <p>Seguir la noticia</p>
+                    </div>
+                </a>
             </article>
         </div>
     </section>
@@ -76,12 +84,12 @@ export default {
     background: #000000;
     color: #ffffff;
     border-radius: 1rem;
-
 }
 
 .noticias {
 
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     border-radius: 1rem;
     padding: 1rem;
@@ -90,7 +98,11 @@ export default {
 }
 
 .noticias .notart {
-    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items:start;
+    overflow-y: scroll;
+    width: 260px;
     margin-top: 1rem;
     margin-left: 2rem;
     border: 2px solid rgb(255, 255, 255);
@@ -110,7 +122,6 @@ export default {
 .notart p {
 
     width: 95%;
-    height: 40%;
     padding: 0.3rem;
 }
 
@@ -120,23 +131,22 @@ export default {
 }
 
 .divnot {
-    width: 80%;
-    height: 10%;
-    padding-left: 1rem;
-
+    align-self: flex-end;
 }
-
-.divnot a {
-    display: flex;
-    margin: -10%;
-    width: 40%;
-    margin-left: 10rem;
-    color:chartreuse;
-    
+.linkButton{
+    margin-top: 10px;
     text-decoration: none;
+    display: flex;
+    text-align: center;
+    align-self: center;
+    color:rgb(129, 255, 2);
+    text-decoration: none;
+    width: 40%;
+    border-radius: 5%;
+    background-color: #0e4b00;
 }
-
-.divnot a:hover {
-    background-color: #ffffff;
+.linkButton:hover{
+    color: #051d00;
+    background-color: rgb(129, 255, 2);
 }
 </style>

@@ -3,8 +3,11 @@
   <SiteNavbar></SiteNavbar>
   <main>
     <SiteVideojuegos></SiteVideojuegos>
-    <SiteTrucos></SiteTrucos>
-    <SiteNoticias></SiteNoticias>
+    <div class="adminNewsTable">
+      <SiteTrucos></SiteTrucos>
+      <SiteNoticias></SiteNoticias>
+    </div>
+    
     <SiteRanking></SiteRanking>
   </main>
   <SiteFooter></SiteFooter>
@@ -36,24 +39,27 @@ export default {
 </script>
 
 <style>
-html, body{
-  padding: 0px;
-  margin: 0px;
-}
 #app {
-  margin: 0rem;
-  padding: 0rem;
   font-family: 'Maven Pro', sans-serif;
   background-color: #000000;
   
 }
-body{
-  margin: 0rem;
-  padding: 0rem;
-}
 main{
+  margin: 0px;
+  padding: 0px;
   width: 100%;
   display: flex; 
   flex-wrap: wrap;
 }
+form button{
+  border-radius: 10px;
+  height: 40px;
+}
+button{
+    width: 50%;
+}
+.adminNewsTable{
+  display: flex;
+}
+
 </style>

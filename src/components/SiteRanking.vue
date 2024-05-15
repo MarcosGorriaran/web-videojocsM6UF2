@@ -1,7 +1,8 @@
 <template>
     <section class="rank">
         <h2>RANKING</h2>
-        <article class="rankart">
+        <div class="people">
+            <article class="rankart">
             <div class="divimg">
                 <img src="@/assets/cara1.jpg" class="imgredonda" alt="jugador">
             </div>
@@ -43,6 +44,8 @@
             <h3>Nombre</h3>
             <p>Puntuacion</p>
         </article>
+        </div>
+        
     </section>
 </template>
 
@@ -58,7 +61,7 @@ export default {
 <style scoped>
 .rank {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     width: 100%;
     justify-content: space-around;
     background: #5a4292
@@ -71,20 +74,15 @@ export default {
     padding: 1rem;
 
 }
-
+.people{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
 .rankart {
-    width: 15%;
-    height: 50%;
     padding: 0.5rem;
-    align-content: center;
-}
-
-.rankart h3 {
-    text-align: center;
-}
-
-.rankart {
-
     text-align: center;
 }
 
@@ -95,8 +93,4 @@ export default {
     border-radius: 150px;
 }
 
-.divimg {
-    width: 100%;
-    align-content: center;
-}
 </style>

@@ -17,12 +17,10 @@ export default {
 <style scoped>
 header {
     width: 100%;
-    padding: 0px;
     background-color: #000000;
     text-align: center;
 }
-img{
+header img{
   width: 100%;
-  height: 250px;
 }
 </style>

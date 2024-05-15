@@ -27,7 +27,7 @@ export default {
 .truco {
     flex-direction: column;
     width: 25%;
-    height: 80rem;
+    height: 100%;
     margin-left: 0.5rem;
     background: #61f825;
 
