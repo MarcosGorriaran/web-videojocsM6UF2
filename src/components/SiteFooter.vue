@@ -1,6 +1,6 @@
 <template>
     <footer>
-        <div class="footer">
+        <div class="SocialNetworks">
             <div class="fooimg">
                 <img src="@/assets/instagram.png" alt="Instagram">
                 <img src="@/assets/facebook.png" alt="Facebook">
@@ -27,14 +27,13 @@ export default {
 footer {
     width: 90%;
     text-align: center;
-    padding-left: 2rem;
-
+    background: #ffffff;
 
 }
 
-div.footer {
+div.SocialNetworks {
     display: flex;
-    background: #ffffff;
+    
     width: 65%;
 
 }
